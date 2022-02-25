@@ -24,8 +24,13 @@ public class MarkdownParse {
             }
 
 
-            if (nextOpenBracket != 0 && !markdown.substring(nextOpenBracket - 1, nextOpenBracket).equals("!")){
-                System.out.println(markdown.substring(nextOpenBracket - 1, nextOpenBracket));
+            if (nextOpenBracket != 0){
+                if(!markdown.substring(nextOpenBracket - 1, nextOpenBracket).equals("!")){
+                    System.out.println(markdown.substring(nextOpenBracket - 1, nextOpenBracket));
+                    toReturn.add(markdown.substring(openParen + 1, closeParen));
+                }
+            }
+            else{
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
             }
 
